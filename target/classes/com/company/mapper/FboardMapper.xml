@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.mapper.FboardMapper">
+<!-- 게시글 전체 조회 -->
+<select id="fBoardList" resultType="com.company.domain.fBoardVO">
+select * from fboardtbl
+</select>
+
+<!-- 게시글 개별 조회 -->
+	<select id="fread" resultType="com.company.domain.fBoardVO">
+	select * from fboardtbl where fbno=#{fbno}
+	</select>
+
+<!-- 게시글 작성 -->
+	<insert id="finsert">
+	insert into fboardtbl(fbno,ftitle,fcontent,fwriter,fregdate) 
+	values(seq_fbno.nextval,#{ftitle},#{fcontent},#{fwriter},sysdate)
+	</insert>
+	
+<!-- 게시글 수정 -->
+	<update id="fupdate">
+	update fboardtbl set ftitle=#{ftitle}, fcontent=#{fcontent}
+	where fbno=#{fbno}
+	</update>
+	
+<!-- 게시글 삭제 -->
+	<delete id="fdelete">
+	delete from fboardtbl where fbno=#{fbno}
+	</delete>
+
+
+
+</mapper>

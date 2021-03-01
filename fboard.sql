@@ -1,0 +1,12 @@
+CREATE TABLE FBoardTBL (
+	fbno			NUMBER(10, 0)	NOT NULL, 
+	ftitle		VARCHAR2(200)	NOT NULL, 
+	fcontent		VARCHAR2(2000)	NOT NULL, 
+	fwriter		NVARCHAR2(50)	NOT NULL, 
+	fregdate		DATE			DEFAULT SYSDATE, 
+	CONSTRAINT fBoardTBL_PK PRIMARY KEY (fbno)
+);
+select  * from FBOARDTBL;
+drop table fboardtbl;
+DROP SEQUENCE seq_fbno;
+CREATE SEQUENCE seq_fbno START WITH 1 INCREMENT BY 1;
