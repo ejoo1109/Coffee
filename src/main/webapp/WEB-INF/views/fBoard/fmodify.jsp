@@ -2,43 +2,49 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../header.jsp" %>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">게시글 수정</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>            
-            <div class="row">
-                <div class="col-lg-12">
-                	<div class="panel panel-default">
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                			<form action="" method="post" role="form">
-                				<div class="form-group">
-                				    <label>번호</label>
-                					<input class="form-control" name="fbno" readonly="readonly" value="${fboard.fbno}">                				
-                				</div> 
-                				<div class="form-group">
-                					<label>제목</label>
-                					<input class="form-control" name="ftitle" value="${fboard.ftitle}">                				
-                				</div>  
-                				<div class="form-group">
-                					<label>내용</label>
-                					<textarea class="form-control" rows="3" name="fcontent">${fboard.fcontent}</textarea>               				
-                				</div> 
-                				<div class="form-group">
-                					<label>작성자</label>
-                					<input class="form-control" name="fwriter" readonly="readonly" value="${fboard.fwriter}">                				
-                				</div> 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-3 col-md-9">
 
+				<div class="card" style="width: 40rem; margin: 40px auto;">
+					<div class="card-header">
+						<h4>게시글 수정</h4>
+					</div>
+					<div class="card-body">
+
+						<form action="" method="post" role="form">
+							<div class="form-group">
+								<label>글번호</label> <input class="form-control" name="fbno" readonly="readonly" value="${fboard.fbno}">
+							</div>
+							<div class="form-group">
+								<label>제목</label> <input class="form-control" name="ftitle" value="${fboard.ftitle}">
+							</div>
+							<div class="form-group">
+								<label>내용</label>
+								<textarea class="form-control" rows="5" name="fcontent">${fboard.fcontent}</textarea>
+							</div>
+							<div class="form-group">
+								<input class="form-control" name="fwriter" readonly="readonly" value="${fboard.fwriter}">
+							</div>
+							<%--  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>  --%>
 		                				<button type="submit" data-oper='modify' class="btn btn-default">수정</button>              			
 		                				<button type="submit" data-oper='remove' class="btn btn-danger"><a href="/fBoard/fdelete?fbno=${fboard.fbno}" class="move">삭제</a></button>              			
-                						<button type="submit" data-oper='list' class="btn btn-info">리스트</button>              			
-                			</form>
-                		</div>
-                	</div>
-                </div>
-            </div>
+                						<button type="submit" data-oper='list' class="btn btn-info">리스트</button> 
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ 
             	<input type="hidden" name="fbno" value="${fboard.fbno}"/>
             	
 <%--첨부파일 보여주기 --%>

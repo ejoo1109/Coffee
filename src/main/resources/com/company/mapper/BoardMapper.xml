@@ -35,7 +35,7 @@
 				from BoardTBL
 				where
 		]]>
-<!-- 			<include refid="criteria"></include> -->
+ 			<include refid="criteria"></include> 
 		<![CDATA[
 				rownum <= (#{pageNum} * #{amount}))
 				where rn > (#{pageNum} - 1) * #{amount}
@@ -45,7 +45,7 @@
 <!-- 전체 게시물 개수 -->
 	<select id="totalCnt" resultType="int">
 		select count(*) from boardtbl where 
-<!--  		<include refid="criteria"></include>  -->
+  		<include refid="criteria"></include>  
 		bno>0
 	</select>
 
@@ -56,10 +56,10 @@
 	</update>
 	
 <!-- 첨부파일 가져오기 -->
-<!-- 	<select id="attachList" resultType="com.company.domain.FileAttach">
-		select * from spring_attach where bno=#{bno}
+ 	<select id="attachList" resultType="com.company.domain.FileAttach">
+		select * from boardtbl_attach where bno=#{bno}
 	</select>
-동적 SQL
+<!-- 동적 SQL -->
 	<sql id="criteria">
 		<trim prefix="(" suffix=")AND" prefixOverrides="OR">
 			<foreach collection="typeArr" item="type">
@@ -78,7 +78,7 @@
 				</trim>
 			</foreach>
 		</trim> 
-	</sql>-->
+	</sql>
 
 
 

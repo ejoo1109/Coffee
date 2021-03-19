@@ -25,7 +25,7 @@
 							</div>
 							<div class="form-group">
 								<label>내용</label>
-								<textarea class="form-control" rows="3" name="fcontent"></textarea>
+								<textarea class="form-control" rows="5" name="fcontent"></textarea>
 							</div>
 							<div class="form-group">
 								<label>작성자</label> <input class="form-control" name="fwriter">
@@ -33,7 +33,7 @@
 							<%--  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>  --%>
 							<button type="submit" class="btn btn-primary">등록</button>
 							<button type="reset" class="btn btn-default"
-								onclick="location.href='/fBoard/fBoard'">취소</button>
+								onclick="location.href='/fBoard/fBoardlist'">취소</button>
 						</form>
 					</div>
 				</div>

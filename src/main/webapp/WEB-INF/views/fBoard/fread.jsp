@@ -2,42 +2,54 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../header.jsp" %>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">게시글 조회</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>            
-            <div class="row">
-                <div class="col-lg-12">
-                	<div class="panel panel-default">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-3 col-md-9">
 
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                			<form action="" role="form" method="post">
-                				<div class="form-group">
-                					<input class="form-control" name="fbno" value="${fboard.fbno}" readonly="readonly">                				
-                				</div> 
-                				<div class="form-group">
-                					<label>제목</label>
-                					<input class="form-control" name="ftitle" value="${fboard.ftitle}" readonly="readonly">                				
-                				</div>  
-                				<div class="form-group">
-                					<label>내용</label>
-                					<textarea class="form-control" rows="3" name="fcontent" readonly="readonly">${fboard.fcontent}</textarea>               				
-                				</div> 
-                				<div class="form-group">
-                					<label>작성자</label>
-                					<input class="form-control" name="fwriter" value="${fboard.fwriter}" readonly="readonly">                				
-                				</div>  
-                				
-                				<button type="button" class="btn btn-default" ><a href="/fBoard/fmodify?fbno=${fboard.fbno}" class="move">수정</a></button>
-                				<button type="reset" class="btn btn-info" onclick="location.href='/fBoard/fBoardlist'">리스트</button>          			
-                			</form>
-                		</div>
-                	</div>
-                </div>
-            </div>
+				<div class="card" style="width: 40rem; margin: 40px auto;">
+					<div class="card-header">
+						<h4>게시글 조회</h4>
+					</div>
+					<div class="card-body">
+
+						<form action="" method="post" role="form">
+							<div class="form-group">
+								<label>글번호</label> <input class="form-control" name="fbno"
+									value="${fboard.fbno}" readonly="readonly">
+							</div>
+							<div class="form-group">
+								<label>제목</label> <input class="form-control" name="ftitle"
+									value="${fboard.ftitle}" readonly="readonly">
+							</div>
+							<div class="form-group">
+								<label>내용</label>
+								<textarea class="form-control" rows="5" name="fcontent"
+									readonly="readonly">${fboard.fcontent}</textarea>
+							</div>
+							<div class="form-group">
+								<label>작성자</label> <input class="form-control" name="fwriter"
+									value="${fboard.fwriter}" readonly="readonly">
+							</div>
+							<%--  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>  --%>
+							<button type="button" class="btn btn-default">
+								<a href="/fBoard/fmodify?fbno=${fboard.fbno}" class="move">수정</a>
+							</button>
+							<button type="reset" class="btn btn-info"
+								onclick="location.href='/fBoard/fBoardlist'">리스트</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 <%-- 				<input type="hidden" name="pageNum" value="${cri.pageNum}" />
 				<input type="hidden" name="amount" value="${cri.amount}" />

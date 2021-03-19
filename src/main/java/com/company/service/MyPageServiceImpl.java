@@ -1,6 +1,7 @@
 package com.company.service;
-//마이페이지 서비스임플 - 은주
 
+
+//마이페이지 서비스임플 - 은주
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,18 +13,18 @@ import com.company.mapper.MyPageMapper;
 
 @Service
 public class MyPageServiceImpl implements MyPageService {
-	
+
 	@Autowired
 	private MyPageMapper mapper;
-	
+
 	@Override
 	public AuthVO isLogin(LoginVO login) {
 		return mapper.isLogin(login);
 	}
 
 	@Override
-	public boolean leave(String userid) {
-		return mapper.leaveMember(userid)>0?true:false;
+	public boolean leave(LoginVO login) {
+		return mapper.leaveMember(login)>0?true:false;
 	}
 
 	@Override
@@ -36,5 +37,4 @@ public class MyPageServiceImpl implements MyPageService {
 		return mapper.getId(userid);
 	}
 
-	
 }

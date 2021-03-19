@@ -18,23 +18,25 @@
 	<title>Business Casual - Start Bootstrap Theme</title>
 	
 	<!-- Bootstrap CDN -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
+    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+    <!-- MetisMenu CSS -->
+    <link href="/resources/vendor/metisMenu/metisMenu.min.css" rel="stylesheet"> 
+    <!-- Custom CSS -->
+    <link href="/resources/dist/css/sb-admin-2.css" rel="stylesheet"> 
+    <!-- Custom Fonts -->
+    <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">   
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
-
-    <!-- Custom styles for this template -->
-<!--     <link href="/resources/css/business-casual.min.css" rel="stylesheet" /> -->
    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
    
-   
+  
   </head>
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+ <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
 <script type="text/javascript">
 $(document).ready(function () {
     $(".toggle").mouseenter(function(){
@@ -54,11 +56,12 @@ $(document).ready(function () {
         <nav class="navbar-static-top" role="navigation" >
             <ul class="nav navbar-top-links navbar-right">
             	<li>
-            		<sec:authorize access="isAnonymous()">
+  
+	          		<%-- <sec:authorize access="isAnonymous()"> --%>
 						<a class="nav-toggle" href="/mypage/signin">login</a>
-					</sec:authorize>
-					<sec:authorize access="isAuthenticated()">
-						<a class="nav-toggle" href="" id="logout">logout</a>
+					<%-- </sec:authorize> --%>
+					<%-- <sec:authorize access="isAuthenticated()"> --%>
+					<%--	<a class="nav-toggle" href="" id="logout">logout</a>
 							<form action="/user/logout" method="post" id="logoutForm">
 								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 							</form>
@@ -68,20 +71,7 @@ $(document).ready(function () {
 								$("#logoutForm").submit();
 							})
 						</script>
-					</sec:authorize>
-            		<%-- <c:choose>
-	            		<c:when test="${empty sessionScope.regist}">
-	            			<a class="nav-toggle" href="/mypage/signin">
-		                      login
-		                    </a>  
-	            		</c:when>
-	            		<c:otherwise>
-	            		 	 ${regist.userid}님
-	            			<a class="nav-toggle" href="/user/logout">
-		                    	logout
-		                    </a>  
-	            		</c:otherwise>
-            		</c:choose> --%>
+		 		</sec:authorize> --%>
             	</li>
                 <li>
                     <a class="nav-toggle" href="/mypage/myPageGo">
@@ -95,6 +85,7 @@ $(document).ready(function () {
                 </li>
             </ul>
         </nav>
+        
         <div class="navbar-header">
         	<a href="/"><img class="logo" src="/resources/Logo/blackbeanlogo4.jpg" style="width:200px; hieght:100px;"></a>
         </div>
@@ -116,7 +107,7 @@ $(document).ready(function () {
       		</li>
       		<li class="toggle"><a href="/store/list">매장</a>
       		</li>
-      		<li class="toggle"><a href="/Notice/list">고객센터</a>
+      		<li class="toggle"><a href="/fBoard/fBoardlist">고객센터</a>
       			<ul class="sub">
       				<li><a href="/Notice/list">공지사항</a></li>
       				<li><a href="/fBoard/fBoardlist">FAQ</a></li>
@@ -125,5 +116,5 @@ $(document).ready(function () {
       		</li>
       	</ul>
       </div>      
+   </div>
    </div><!-- wrapper end -->
-        <div id="page-wrapper">   

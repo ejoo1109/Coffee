@@ -17,6 +17,7 @@
     <div class="container">
             <div class="row">
              <div class="col-2 col-md-10" >
+             <h1>FAQ 게시판</h1>
 <table class="table">
 			<thead>
 				<tr class="text-center" style="background: #E6E6F2;">
